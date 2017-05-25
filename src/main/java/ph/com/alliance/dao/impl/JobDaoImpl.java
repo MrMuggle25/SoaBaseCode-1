@@ -25,6 +25,15 @@ public class JobDaoImpl implements JobDao{
 		return jobList;
 		
 	}
+	
+	public Job getJob(EntityManager em, int id){
+		Job job = new Job();
+		Query jobQuery = em.createQuery("FROM Job WHERE jobid = :id");
+		jobQuery.setParameter("id", id);
+		job = (Job) jobQuery.getSingleResult();
+		
+		return job;
+	}
 
 	@Override
 	public void insert(EntityManager em, Job Job) {
@@ -37,17 +46,15 @@ public class JobDaoImpl implements JobDao{
 	}
 
 	@Override
-	public List<Job> delete(EntityManager em, Job job) {
+	public void delete(EntityManager em, Job job) {
 		// TODO Auto-generated method stub
-		List<Job> jobList = null;
 		
 		StringBuilder userQuery= new StringBuilder("DELETE FROM Job myT WHERE myT.userid= :id");
 		Query query =em.createQuery(userQuery.toString());
 		query.setParameter("id",job.getJobid());
 		query.executeUpdate();
 		
-		jobList = query.getResultList();
-		return jobList;
+	
 	}
 
 }

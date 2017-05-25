@@ -144,4 +144,10 @@ public class UseraccountDaoImpl implements UseraccountDao {
 		}
 	}
 
+	@Override
+	public List<String> getList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

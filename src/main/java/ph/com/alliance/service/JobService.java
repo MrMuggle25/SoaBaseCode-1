@@ -19,6 +19,6 @@ public interface JobService {
 
 	public void updateJob(Job job);
 	
-	public void deleteJob(Job job);
+	public void deleteJob(int id);
 
 }

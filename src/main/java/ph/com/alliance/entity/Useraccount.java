@@ -44,6 +44,8 @@ public class Useraccount implements Serializable {
 	private String username;
 
 	private int year;
+	
+	private int countUsers = 0;
 
 	//bi-directional many-to-one association to TrainingFacilitator
 	@OneToMany(mappedBy="useraccount")
@@ -231,6 +233,14 @@ public class Useraccount implements Serializable {
 
 	public void setJob(Job job) {
 		this.job = job;
+	}
+
+	public int getCountUsers() {
+		return countUsers;
+	}
+
+	public void setCountUsers(int countUsers) {
+		this.countUsers = countUsers;
 	}
 
 }

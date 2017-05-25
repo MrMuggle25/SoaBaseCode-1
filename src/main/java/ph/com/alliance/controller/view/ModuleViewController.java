@@ -38,6 +38,7 @@ public class ModuleViewController {
         return "profile";
     }
     
+    
     /**
      * 
      * @param request

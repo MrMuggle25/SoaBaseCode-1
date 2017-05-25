@@ -17,8 +17,7 @@ public class PersonDaoImpl implements PersonDao{
 	@Override
 	public List<String> getList() {
 		/*** PERFORM QUERY HERE ***/
-		//hello world!
-		//hello there
+		
 		//QUERY FINISHED
 		
 		List<String> myList = null ; // myList = myQuery.getResult();

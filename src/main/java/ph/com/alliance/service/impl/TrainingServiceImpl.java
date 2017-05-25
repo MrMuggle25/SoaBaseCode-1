@@ -9,34 +9,76 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.stereotype.Service;
 
-import ph.com.alliance.dao.JobDao;
-import ph.com.alliance.dao.impl.JobDaoImpl;
-import ph.com.alliance.entity.Job;
-import ph.com.alliance.service.JobService;
+
+
+
+
+
+
+import ph.com.alliance.dao.TrainingDao;
+import ph.com.alliance.entity.Person;
+import ph.com.alliance.entity.Training;
+import ph.com.alliance.service.TrainingService;
 
 @Service
-public class JobServiceImpl implements JobService{
+public class TrainingServiceImpl implements TrainingService{
 
 	@Autowired
-	private JobDao jobDao;
+	private TrainingDao trainingDao;
 
 	@Autowired
 	private JpaTransactionManager transactionManager;
 
 	@Override
-	public List<Job> getJobs() {
+	public List<String> getList() {
 		// TODO Auto-generated method stub
-		return null;
+		return trainingDao.getList();
 	}
 
 	@Override
-	public void insertJob(Job job) {
+	public List<Training> getTrainings() {
+		// TODO Auto-generated method stub
+		EntityManager em = transactionManager.getEntityManagerFactory()
+				.createEntityManager();
+		List<Training> trainingList = null;
+		try {
+			trainingList = trainingDao.getTrainings(em);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (em.isOpen())
+				em.close();
+		}
+
+		return trainingList;
+	}
+
+	@Override
+	public void insertTraining(Training training) {
 		// TODO Auto-generated method stub
 		EntityManager em = transactionManager.getEntityManagerFactory()
 				.createEntityManager();
 		try {
 			em.getTransaction().begin();
-			jobDao.insert(em, job);
+			trainingDao.insert(em, training);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			if(em.getTransaction().isActive())
+				em.getTransaction().rollback();
+		} finally {
+			if (em.isOpen())
+				em.close();
+		}
+	}
+
+	@Override
+	public void updateTraining(Training training) {
+		EntityManager em = transactionManager.getEntityManagerFactory()
+				.createEntityManager();
+		try {
+			em.getTransaction().begin();
+			trainingDao.update(em, training);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -50,41 +92,11 @@ public class JobServiceImpl implements JobService{
 	}
 
 	@Override
-	public void updateJob(Job job) {
+	public void deletePerson(int id) {
 		// TODO Auto-generated method stub
-		EntityManager em = transactionManager.getEntityManagerFactory()
-				.createEntityManager();
-		try {
-			em.getTransaction().begin();
-			jobDao.update(em, job);
-			em.getTransaction().commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-			if(em.getTransaction().isActive())
-				em.getTransaction().rollback();
-		} finally {
-			if (em.isOpen())
-				em.close();
-		}
+		
 	}
 
-	@Override
-	public void deleteJob(int id) {
-		// TODO Auto-generated method stub
-		EntityManager em = transactionManager.getEntityManagerFactory()
-				.createEntityManager();
-		Job job = jobDao.getJob(em, id);
-		try {
-			em.getTransaction().begin();
-			jobDao.delete(em, job);
-			em.getTransaction().commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-			if(em.getTransaction().isActive())
-				em.getTransaction().rollback();
-		} finally {
-			if (em.isOpen())
-				em.close();
-		}
-	}
+	
+
 }
