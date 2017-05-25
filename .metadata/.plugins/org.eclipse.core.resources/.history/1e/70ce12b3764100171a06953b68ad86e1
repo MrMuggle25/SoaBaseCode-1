@@ -1,0 +1,5 @@
+package ph.com.alliance.service.impl;
+
+public class TrainingParticipantServiceImpl {
+
+}

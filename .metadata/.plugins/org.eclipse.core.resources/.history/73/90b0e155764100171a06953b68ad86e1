@@ -1,0 +1,7 @@
+package ph.com.alliance.dao.impl;
+
+import ph.com.alliance.dao.TrainingParticipantDAO;
+
+public class TrainingParticipantDAOImpl implements TrainingParticipantDAO {
+
+}

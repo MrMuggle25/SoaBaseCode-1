@@ -1,0 +1,391 @@
+@CHARSET "ISO-8859-1";
+.sub-header {
+     padding-bottom: 10px;
+     padding-left: 20px;
+     border-bottom: 1px solid #eee;
+}
+
+.navbar-fixed-top {
+     border: 0;
+     top: 0;
+     position: fixed;
+     right: 0;
+     left: 0;
+     z-index: 1030;
+}
+
+.nav-sidebar {
+     margin-left: -21px;
+}
+
+.sidebar {
+     display: none;
+}
+
+p {
+     margin: 0px;
+}
+@media (min-width: 768px) {
+     .sidebar {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1000;
+          display: block;
+          padding: 20px;
+          overflow-x: hidden;
+          overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+          background-color: transparent;
+          border-right: 1px solid #eee;
+          margin-top: 68px;
+     }
+}
+
+.nav-sidebar {
+     margin-right: -21px; /* 20px padding + 1px border */
+     margin-bottom: 20px;
+}
+
+.nav-sidebar > li > a {
+     padding-right: 20px;
+     padding-left: 20px;
+     font-weight: bold;
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+     color: white;
+     background-color: #cc181e;
+}
+
+.nav-sidebar > .inactive > a > .sidebar-item{
+     color: #141414;
+}
+
+.nav-sidebar > .inactive > a:hover{
+     background-color: rgba(204, 24, 30, .25);
+}
+
+.navbar-right > .active > a,
+.navbar-right > .active > a:hover,
+.navbar-right > .active > a:focus, 
+.navbar-right > .inactive > a:hover {
+     border-bottom: 3px solid #D91E18;
+     background-color: transparent;
+}
+
+
+.navbar-right > a {
+     color: #141414;
+     margin: 0 3px; 
+}
+
+@media (min-width: 768px) {
+     .main {
+    
+     }
+}
+.main .page-header {
+     margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+     margin-bottom: 30px;
+     text-align: center;
+}
+.placeholders h4 {
+     margin-bottom: 0;
+}
+.placeholder {
+     margin-bottom: 20px;
+}
+.placeholder img {
+     display: inline-block;
+     border-radius: 50%;
+}
+
+img.userPhoto {
+     width: 100px;
+     height: 100px;
+     margin:10px auto;
+     display:inline-block;
+
+}
+
+.userName {
+     margin: 0px;
+     width: auto;
+     height: auto;
+     font-weight: bold;
+     margin-left: 0px;
+     font-size: 20px;
+     margin:10px auto;
+     display:inline-block;
+
+
+}
+
+.admin {
+     width: 100%;
+     text-align:center;
+     position:relative;
+     margin-bottom: 10px;
+}
+
+.li, .row {
+     margin: 0px;
+}
+
+.navbar-nav {
+     background-color: #1D1D1D;
+     padding-left: 10px;
+}
+
+.navbar-nav li a{
+     color: #141414;
+     font-weight: bold;
+     font-size: 14px;
+}
+
+.navbar-nav > li {
+    margin: 0 5px;
+}
+
+.navbar-collapse {
+     padding: 0px;
+     padding-top: 20px;
+     display: flex;
+     flex-direction: column;
+     top: 68px;
+}
+
+.navbar-header {
+     width: 100%;
+     height: auto;
+}
+
+@media (min-width: 768px){
+     .navbar-right {
+          width: 100%;
+          float: initial;
+          margin-right: 0px;
+     }
+}
+
+.navbar-nav > li > a:hover {
+     color: #1D1D1D
+     background-color: rgb(255, 143, 0);
+}
+
+.navbar-nav > li > a {
+     padding-top: 10px;
+     padding-bottom: 10px;
+}
+
+.panel-default {
+     border-color: #DDD;
+     padding: 10px;
+     margin: 10px;
+}
+
+.business-tab {
+     width: 100%; 
+     padding: 20px;
+     background-color: #bdc3c7;
+     height: 500px;
+     flex:1;
+     position: relative;
+}
+
+.business-list {
+     border: 1px solid #95a5a6;
+     box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     background-color: #ecf0f1;
+     padding: 20px;
+     margin: 10px;
+     margin-top: 50px;
+}
+
+.business {
+     padding: 5px;
+     height: 45px;
+     position: relative;
+}
+
+.business-pic {
+     color: white;
+     font-size: 18px;
+     font-weight: bolder;
+     height: 35px;
+     width: 35px;
+     padding: 5px;
+     text-align: center;
+     border-radius: 5px;
+     float: left;
+}
+
+.business-name {
+     margin-left: 35px;
+     padding-left: 10px;
+     padding-top: 5px;
+     padding-bottom: 5px;
+     font-size: 16px;
+     font-weight: bold;
+     height: 100%;
+}
+
+.btn {
+     position: absolute;
+     right: 0; 
+     top: 0; 
+     text-align: right; 
+     max-width: 50%; 
+     overflow: hidden;
+     margin-right: 50px;
+     margin-top: 20px;
+}
+
+h1 {
+     position: absolute; 
+     left: 0; 
+     top: 0;
+     margin-left: 30px;
+}
+
+.icon {
+     height: 20px;
+     width: 20px;
+     position: absolute;  
+}
+
+.sidebar-item {
+     padding-left: 25px;
+     vertical-align: bottom;
+}
+
+.edit {
+     right: 30px;
+}
+
+hr {
+     margin-top: 1px;
+     margin-bottom: 0px;
+     border-color: rgb(189, 195, 199);
+}
+
+.header {
+     background-color: #D91E18;
+     padding: 10px;
+     padding-left: 50px;
+}
+
+img.logo {
+
+     width: 176px;
+     height: 48px;
+}
+
+.admin {
+     width: 100%;
+     text-align:center;
+     position:relative;
+}
+
+img.userPhoto {
+     width: 100px;
+     height: 100px;
+     margin:10px;
+     display:inline-block;
+}
+
+.userName {
+     width: auto;
+     height: auto;
+     font-weight: normal;
+     font-size: 20px;
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+     background-color: rgba(204, 24, 30, .25);
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+     background-color: transparent;
+}
+
+.col-sm-9 {
+     padding-top: 30px;
+     padding-right: 15px;
+     padding-left: 25px;
+}
+
+.icon {
+     height: 15px;
+     width: 15px;
+     position: initial;
+     cursor: pointer;
+}
+
+.icons-td {
+     background-color: white;
+     width: 56px;
+}
+
+.table>tbody>tr>td {
+     border-top: none;
+     cursor: pointer;
+}
+
+.container-fluid {
+     padding: 0;
+}
+
+.navbar {
+     margin-bottom: 0;
+     font-size: 14px;
+     padding-left: 0;
+     height: auto;
+     padding-top: 0;
+     border-bottom: 1px solid #e8e8e8;
+     margin-top: 68px;
+}
+
+.navbar-nav {
+     background-color: transparent;
+}
+
+.collapse {
+     display: block;
+}
+
+.table-responsive {
+     overflow-x: initial;
+}
+
+.add-user-button {
+     float: right;
+     margin-right: 25px;
+     background-color: #D91E18;
+     border-radius: 3px;
+     border: 1px solid #141414;
+     color: white;
+     padding: 5px 15px;
+     font-weight: bold;
+}
+
+.add-user-button:hover {
+     background-color: rgba(204, 24, 30, .25);
+     border: 1px solid white;
+     color: #141414;
+}
+
+#userLayout0{
+     display: none;
+}

@@ -1,0 +1,18 @@
+package ph.com.alliance.service;
+
+import java.util.List;
+
+import ph.com.alliance.entity.TrainingParticipant;
+
+public interface TrainingParticipantService {
+
+ public List<String> getList();
+	 
+	 public List<TrainingParticipant> getFaci();
+	 
+	 public void addFacilitator(TrainingParticipant participant);
+
+	 public void updatePerson(TrainingParticipant participant);
+	 
+	 public void deletePerson(TrainingParticipant participant);
+}
